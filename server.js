@@ -91,8 +91,8 @@ db.sequelize.sync({force: true}).then(() => {
   console.log('Drop and Resync with { force: true }');
 }); 
 
-let router = require('./app/routers/router.js');
-let prestamoRouter = require('./app/routers/prestamo.router.js');
+//let router = require('./app/routers/router.js');
+//let prestamoRouter = require('./app/routers/prestamo.router.js');
 let studentRouter = require('./app/routers/student.router.js');
 
 const cors = require('cors');
@@ -103,8 +103,8 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
-app.use('/', router);
-app.use('/', prestamoRouter);
+//app.use('/', router);
+//app.use('/', prestamoRouter);
 app.use('/', studentRouter);
 
 app.get("/", (req, res) => {
