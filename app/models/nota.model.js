@@ -1,31 +1,31 @@
 module.exports = (sequelize, Sequelize) => {
-    const Student = sequelize.define('student', {
-        idEstudiante: {
+    const Nota = sequelize.define('nota', {
+        id_nota: {
             type: Sequelize.INTEGER,
             autoIncrement: true,
             primaryKey: true
         },
-        nombreCompleto: {
-            type: Sequelize.STRING,
+        id_estudiante: {
+            type: Sequelize.INTEGER,
             allowNull: false
         },
-        tutor: {
-            type: Sequelize.STRING,
-            allowNull: false
-        },
-        fechaNacimiento: {
+        fecha_ingreso_mes: {
             type: Sequelize.DATEONLY,
             allowNull: false
         },
-        genero: {
-            type: Sequelize.STRING,
+        id_curso: {
+            type: Sequelize.INTEGER,
             allowNull: false
         },
-        ultimoGradoAprobado: {
+        nota_total: {
+            type: Sequelize.FLOAT,
+            allowNull: false
+        },
+        status_curso: {
             type: Sequelize.STRING,
             allowNull: false
         }
     });
 
-    return Student;
+    return Nota;
 };

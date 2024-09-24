@@ -94,6 +94,8 @@ db.sequelize.sync({force: true}).then(() => {
 //let router = require('./app/routers/router.js');
 //let prestamoRouter = require('./app/routers/prestamo.router.js');
 let studentRouter = require('./app/routers/student.router.js');
+let cursoRouter = require('./app/routers/curso.router.js');
+let notaRouter = require('./app/routers/nota.router.js');
 
 const cors = require('cors');
 const corsOptions = {
@@ -106,6 +108,8 @@ app.use(bodyParser.json());
 //app.use('/', router);
 //app.use('/', prestamoRouter);
 app.use('/', studentRouter);
+app.use('/', cursoRouter);
+app.use('/', notaRouter);
 
 app.get("/", (req, res) => {
   res.json({ message: "Bienvenido a la API de estudiantes" });
