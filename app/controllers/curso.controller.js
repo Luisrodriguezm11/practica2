@@ -1,18 +1,18 @@
 const db = require('../config/db.config.js');
 const Curso = db.Curso;
 
-// Crear y guardar un nuevo curso
+
 exports.create = (req, res) => {
   let curso = {};
 
   try {
-    // Construir el objeto curso desde el cuerpo de la solicitud
+    
     curso.nombreCurso = req.body.nombreCurso;
     curso.horarioInicio = req.body.horarioInicio;
     curso.horarioFin = req.body.horarioFin;
     curso.jornada = req.body.jornada;
 
-    // Guardar en la base de datos
+
     Curso.create(curso).then(result => {    
       res.status(200).json({
         message: "Curso creado con éxito con id = " + result.id,

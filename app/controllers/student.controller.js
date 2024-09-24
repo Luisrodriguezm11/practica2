@@ -1,19 +1,19 @@
 const db = require('../config/db.config.js');
 const Student = db.Student;
 
-// Crear y guardar un nuevo estudiante
+
 exports.create = (req, res) => {
     let student = {};
 
     try {
-        // Construir el objeto estudiante desde el cuerpo de la solicitud
+ 
         student.nombreCompleto = req.body.nombreCompleto;
         student.tutor = req.body.tutor;
         student.fechaNacimiento = req.body.fechaNacimiento;
         student.genero = req.body.genero;
         student.ultimoGradoAprobado = req.body.ultimoGradoAprobado;
 
-        // Guardar en la base de datos
+
         Student.create(student).then(result => {    
             res.status(200).json({
                 message: "Estudiante creado con éxito con id = " + result.idEstudiante,

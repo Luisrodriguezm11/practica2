@@ -1,19 +1,18 @@
 const db = require('../config/db.config.js');
 const Nota = db.Nota;
 
-// Crear y guardar una nueva nota
+
 exports.create = (req, res) => {
     let nota = {};
 
     try {
-        // Construir el objeto nota desde el cuerpo de la solicitud
         nota.id_estudiante = req.body.id_estudiante;
         nota.fecha_ingreso_mes = req.body.fecha_ingreso_mes;
         nota.id_curso = req.body.id_curso;
         nota.nota_total = req.body.nota_total;
         nota.status_curso = req.body.status_curso;
 
-        // Guardar en la base de datos
+   
         Nota.create(nota).then(result => {    
             res.status(200).json({
                 message: "Nota creada con éxito con id = " + result.id_nota,
